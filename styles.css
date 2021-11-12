@@ -1,0 +1,27 @@
+/* table, th, td {
+    border: 1px solid black;
+  } */
+.hiddenButton 
+{
+    display: none;
+}
+.imageSize {
+    width: 70%;
+    height: auto;
+}
+.minHeight {
+    min-height: 8em; 
+}
+.minHeightFeatures {
+    line-height: 2em; 
+}
+
+.buttonWidth {
+    width: 8em;
+}
+
+.rounded {
+    border-radius:.25rem!important
+}
+/* //min-height */
+

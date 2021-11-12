@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Komputer Store - best shop in the country</title>
+</head>
+
+<body>
+
+    <div class="container p-3 mb-2 bg-light text-dark rounded">
+        <div class="row">
+            <div class="col-md-12 p-3 mb-2 bg-dark text-white h3">Komputer store</div>
+        </div>
+        <div class="row ">
+            <div class="col-md-4 text-center h3 class = minHeightFeatures">Bank</div>
+            <div class="col-md-4 text-center h3 class = minHeightFeatures">Work</div>
+            <div class="col-md-4 text-center h3 class = minHeightFeatures">Laptops</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 text-center h5">Balance <span id="balanceText"> </span> kr</div>
+            <!-- <div class="col-md-2 text-center"><p id = "balanceText"> </p></div> -->
+            <div class="col-md-2 text-center h5">Pay balance</div>
+            <div class="col-md-2 text-center h5"><span id="workText"></span> kr</div>
+            <div class="col-md-4 text-center"><select id="computers"></select></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div id="loanText"></div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div id="repayLoanText"></div>
+            </div>
+            <div class="col-md-4 text-center h3 class = minHeightFeatures">Features</div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-md-4 text-center"><button id="loan" class="btn btn-success btn-primary btn-lg buttonWidth hiddenButton">Get a
+                    Loan</button><button id="repayLoan"
+                    class="btn btn-primary btn-lg btn-danger buttonWidth hiddenButton">Repay loan</button></div>
+          
+            <div class="col-md-2 text-center"><button id="bank" class="btn btn-warning btn-primary btn-lg buttonWidth">Bank</button>
+            </div>
+            <div class="col-md-2 text-center"><button id="work" class="btn btn-primary btn-primary buttonWidth btn-lg">Work</button>
+            </div>
+            <div class="col-md-4 text-center">
+                <div id="specs" class="minHeight"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-3 mb-2 bg-light text-dark rounded ">
+        <div class="row" >
+            <div class="col-md-4 "><img id="image" class="imageSize" onerror="errorImage()" ></img></div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12 text-center h2">
+                        <div id="title"></div>
+                    </div>
+                    <div class="col-md-12 text-center h5 ">
+                        <div id="description" class="minHeightFeatures"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12 text-center h2"><span id="price"></span> NOK</div>
+                    <div class="col-md-12 text-center h3 "><button id="buy" class="btn btn-info btn-primary btn-lg buttonWidth">BUY
+                            NOW</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
