@@ -13,18 +13,17 @@
 
 <body>
 
-    <div class="container p-3 mb-2 bg-light text-dark rounded">
+    <div class="container p-3 mb-2 bg-light text-dark fluid">
         <div class="row">
             <div class="col-md-12 p-3 mb-2 bg-dark text-white h3">Komputer store</div>
         </div>
         <div class="row ">
-            <div class="col-md-4 text-center h3 class = minHeightFeatures">Bank</div>
-            <div class="col-md-4 text-center h3 class = minHeightFeatures">Work</div>
-            <div class="col-md-4 text-center h3 class = minHeightFeatures">Laptops</div>
+            <div class="col-md-4 text-center h3  minHeightFeatures">Bank</div>
+            <div class="col-md-4 text-center h3  minHeightFeatures">Work</div>
+            <div class="col-md-4 text-center h3  minHeightFeatures">Laptops</div>
         </div>
         <div class="row">
             <div class="col-md-4 text-center h5">Balance <span id="balanceText"> </span> kr</div>
-            <!-- <div class="col-md-2 text-center"><p id = "balanceText"> </p></div> -->
             <div class="col-md-2 text-center h5">Pay balance</div>
             <div class="col-md-2 text-center h5"><span id="workText"></span> kr</div>
             <div class="col-md-4 text-center"><select id="computers"></select></div>
@@ -36,16 +35,19 @@
             <div class="col-md-4 text-center">
                 <div id="repayLoanText"></div>
             </div>
-            <div class="col-md-4 text-center h3 class = minHeightFeatures">Features</div>
+            <div class="col-md-4 text-center h3 minHeightFeatures">Features</div>
         </div>
         <div class="row pt-3">
-            <div class="col-md-4 text-center"><button id="loan" class="btn btn-success btn-primary btn-lg buttonWidth hiddenButton">Get a
+            <div class="col-md-4 text-center"><button id="loan"
+                    class="btn btn-success btn-primary btn-lg buttonWidth hiddenButton">Get a
                     Loan</button><button id="repayLoan"
                     class="btn btn-primary btn-lg btn-danger buttonWidth hiddenButton">Repay loan</button></div>
-          
-            <div class="col-md-2 text-center"><button id="bank" class="btn btn-warning btn-primary btn-lg buttonWidth">Bank</button>
+
+            <div class="col-md-2 text-center"><button id="bank"
+                    class="btn btn-warning btn-primary btn-lg buttonWidth">Bank</button>
             </div>
-            <div class="col-md-2 text-center"><button id="work" class="btn btn-primary btn-primary buttonWidth btn-lg">Work</button>
+            <div class="col-md-2 text-center"><button id="work"
+                    class="btn btn-primary btn-primary buttonWidth btn-lg">Work</button>
             </div>
             <div class="col-md-4 text-center">
                 <div id="specs" class="minHeight"></div>
@@ -53,9 +55,9 @@
         </div>
     </div>
 
-    <div class="container p-3 mb-2 bg-light text-dark rounded ">
-        <div class="row" >
-            <div class="col-md-4 "><img id="image" class="imageSize" onerror="errorImage()" ></img></div>
+    <div class="container p-3 mb-2 bg-light text-dark fluid  ">
+        <div class="row">
+            <div class="col-md-4 "><img id="image" class="imageSize " onerror="errorImage()"></img></div>
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-md-12 text-center h2">
@@ -68,8 +70,9 @@
             </div>
             <div class="col-md-4">
                 <div class="row">
-                    <div class="col-md-12 text-center h2"><span id="price"></span> NOK</div>
-                    <div class="col-md-12 text-center h3 "><button id="buy" class="btn btn-info btn-primary btn-lg buttonWidth">BUY
+                    <div class="col-md-12 text-center h2 "><span id="price"></span> NOK </div>
+                    <div class="col-md-12 text-center h3 "><button id="buy"
+                            class="btn btn-info btn-primary btn-lg buttonWidth">BUY
                             NOW</button></div>
                 </div>
             </div>

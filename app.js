@@ -7,8 +7,6 @@ const repayLoanButtonElement = document.getElementById("repayLoan");
 const buyButtonElement = document.getElementById("buy");
 const imageElement = document.getElementById("image");
 const baseUrl = "https://noroff-komputer-store-api.herokuapp.com";
-const errorImage1 =
-  "https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png";
 
 let computers = [];
 let loan = 0;
@@ -17,6 +15,7 @@ let bank = 0;
 let payBalance = 0;
 let repayLoan = 0;
 let priceTotal = 0;
+let boughtPC = false;
 
 this.balanceText.innerText = 200;
 this.workText.innerText = 0;
@@ -60,44 +59,52 @@ const handlecomputersMenuChange = e => {
 
 const handleLoan = () => {
 
-    if (loan <= 0) {
+    if (boughtPC === false) {
+        if (loan <= 0 && balance != 0) {
 
-        loan = prompt("Please enter of amount you want to loan");
+            loan = prompt("Please enter of amount you want to loan");
+            loan = parseFloat(loan);
 
-        loan = parseFloat(loan);
+            let res = isNaN(loan);
 
-        if (loan === null) {
-            return; 
+            if (res === true) {
+                loan = 0;
+                return;
+            }
+
+            if (loan > (balance * 2)) {
+
+                alert("You cannot loan more than twice the balance");
+                loan = 0;
+                return;
+            }
+
+            balance += loan;
+            loanText.innerText = "Loan " + loan;
+            balanceText.innerText = balance;
+
+            repayLoanButtonElement.classList.remove("hiddenButton");
+            loanButtonElement.classList.add("hiddenButton");
+            boughtPC = true;
         }
-
-        if (loan > (balance * 2)) {
-            alert("You cannot loan more than twice the balance");
-            loan = 0;
-            return;
-        }
-
-        balance += loan;
-        loanText.innerText = "Loan " + loan;
-        balanceText.innerText = balance;
-        repayLoanButtonElement.classList.remove("hiddenButton");
-        loanButtonElement.classList.add("hiddenButton");
+        else { alert("You need money in the bank to get a loan") }
     }
+    else { alert(`You can't have another bank loan. Sorry!`) };
 }
 
 const handleBank = () => {
 
-    if (payBalance === 0)
-    {
+    if (payBalance === 0) {
         alert(`You haven't any money to transfer`);
     }
-    
+
     if (loan > 0 && payBalance > 0) {
-        loan = loan - (Math.abs(payBalance) * 0.1);
+        loan = loan - (payBalance * 0.1);
         loanText.innerText = "Loan " + loan;
 
         if (loan <= 0) {
             payBalance = payBalance + Math.abs(loan);
-            loanText.innerText = "";
+            loanText.innerText = null;
             loan = 0;
             repayLoanButtonElement.classList.add("hiddenButton");
             loanButtonElement.classList.remove("hiddenButton");
@@ -114,22 +121,31 @@ const handleBank = () => {
 const handleWork = () => {
 
     payBalance += 100;
-    workText.innerText =payBalance;
+    workText.innerText = payBalance;
 }
 
 const handleRepayLoan = () => {
 
-    if (balance >= loan && loan > 0) {
-        balance =balance - loan;
-        loan = 0;
-        balanceText.innerText = balance;
+    if (payBalance > 0) {
+        if (payBalance >= loan) {
+            payBalance = payBalance - loan;
+            loan = 0;
+        }
+
+        workText.innerText = payBalance;
+
+        // // loan = 0;
+        // balanceText.innerText = balance;
         if (loan > 0) {
             loanText.innerText = "Loan " + loan;
         } else {
-            loanText.innerText = "";
+            loanText.innerText = null;
             repayLoanButtonElement.classList.add("hiddenButton");
             loanButtonElement.classList.remove("hiddenButton");
         }
+    }
+    else {
+        alert(`Your're paybalance is zero.You should work a little bit more!`);
     }
 }
 const handleBuy = () => {
@@ -138,6 +154,7 @@ const handleBuy = () => {
         balance = balance - priceTotal;
         balanceText.innerText = balance;
         alert(`Congratulations! You have bought a new laptop!`);
+        boughtPC = false;
     }
     else {
         alert(`Sorry, you don't have enough money (yet)!`)
