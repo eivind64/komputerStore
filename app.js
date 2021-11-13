@@ -128,7 +128,7 @@ const handleRepayLoan = () => {
 
     if (payBalance > 0) {
         if (payBalance >= loan) {
-            payBalance = payBalance - loan;
+            payBalance -= loan;
             loan = 0;
         }
 
